@@ -1,5 +1,6 @@
 NEURAL SOUL — PRIVACY POLICY
-Last updated: 2026/07/25
+
+Last updated: 2026/07/30
 Applies to: Neural Soul (Steam, Windows)
 
 Neural Soul is built to run entirely on your own machine. This page explains
@@ -12,86 +13,78 @@ your device.
 Neural Soul does not collect, upload, or transmit any personally
 identifiable information. The only data that exists is stored locally on
 your own device and never leaves it, unless you use an online feature
-described in Section 3.
+described in Section 2.
 
-  Data type                          Purpose                          Stored where
-  ----------------------------------------------------------------------------------
-  AI chat history                    Maintains AI memory/context      Local JSON file
-  User settings (volume, language)   Restores your preferences        Local PlayerPrefs
-                                                                       (Windows Registry)
-  Stickers / Avatar images           Displays your custom character   Local folder
+Data type                          Purpose                      Stored where
+----------------------------------------------------------------------------------
+User settings (volume, language)   Restores your preferences    Local PlayerPrefs
+                                                                (Windows Registry)
 
+Stickers / Avatar images           Displays your custom         Local folder
+                                   character
 
-2. WHERE YOUR CONVERSATION DATA LIVES
+Your local files are stored under:
 
-Chat data is stored as plain JSON files on your own machine. You can open
-these folders and delete them at any time — nothing is mirrored anywhere
-else.
+C:\Users\{Username}\AppData\LocalLow\sili guy studio\Neural Soul\UserData\
 
-  AI conversation context:
-  C:\Users\{Username}\AppData\LocalLow\sili guy studio\Neural Soul\UserData\neural_soul_avatars\{AvatarName}\chat_history.json
-
-  Chat UI display log:
-  C:\Users\{Username}\AppData\LocalLow\sili guy studio\Neural Soul\UserData\neural_soul_avatars\{AvatarName}\chat_ui_history.json
-
-  AI long-term memory summary:
-  C:\Users\{Username}\AppData\LocalLow\sili guy studio\Neural Soul\UserData\neural_soul_avatars\{AvatarName}\chat_memory.json
+You can open this folder and delete its contents at any time — nothing is
+mirrored anywhere else.
 
 
-3. NETWORK CONNECTIONS
+2. NETWORK CONNECTIONS
 
 Most of Neural Soul runs fully offline. Below is every situation where any
 network connection is made, and exactly what is sent.
 
-  Feature           Connects to              What happens
-  ----------------------------------------------------------------------------------
-  AI chat           http://127.0.0.1         Talks to the llama-server process
-                     (local)                 running on your own machine.
-                                              Nothing leaves your device.
+Feature          Connects to            What happens
+----------------------------------------------------------------------------------
+Steam Workshop   Steam's servers        Used only to subscribe to and
+                                        download stickers/avatars made by
+                                        other creators, handled entirely
+                                        by the Steamworks SDK under
+                                        Steam's own privacy policy.
 
-  Steam Workshop    Steam's servers          Used only to subscribe to and
-                                              download stickers/avatars made by
-                                              other creators, handled entirely
-                                              by the Steamworks SDK under
-                                              Steam's own privacy policy.
+LAN Party        Other players' devices You connect using a third-party
+                 (peer-to-peer)         virtual LAN tool of your choice
+                                        (e.g. Radmin VPN, Hamachi). While
+                                        connected, only your chosen
+                                        sticker image and a true/false
+                                        "microphone active" flag are
+                                        shared between players — no
+                                        audio stream and no personally
+                                        identifying data is transmitted.
 
-  LAN Party         Other players' devices   You connect using a third-party
-  connection        (peer-to-peer)           virtual LAN tool of your choice
-                                              (e.g. Radmin VPN, Hamachi). While
-                                              connected, only your chosen
-                                              sticker image and a true/false
-                                              "microphone active" flag are
-                                              shared between players — no
-                                              audio stream and no personally
-                                              identifying data is transmitted.
+Note: any data handling performed by third-party tools you choose to use
+for LAN Party connections (such as Radmin VPN or Hamachi) is governed by
+that tool's own privacy policy, not by Neural Soul.
 
-  Note: any data handling performed by third-party tools you choose to use
-  for LAN Party connections (such as Radmin VPN or Hamachi) is governed by
-  that tool's own privacy policy, not by Neural Soul.
+Neural Soul contains no analytics, no telemetry, no crash reporting, no
+advertising SDKs, and no runtime AI or machine-learning services. It does
+not require an account and does not connect to any server operated by us.
 
 
-4. YOUR CONTROL OVER YOUR DATA
+3. YOUR CONTROL OVER YOUR DATA
 
 Because everything lives in local files, you are always in control.
-Deleting the folders listed in Section 2 permanently removes your chat
-history and memory. Uninstalling the application removes settings and
+Deleting the folder listed in Section 1 permanently removes your custom
+avatars and stickers. Uninstalling the application removes settings and
 local avatar/sticker assets.
 
 
-5. CHILDREN'S PRIVACY
+4. CHILDREN'S PRIVACY
 
 Neural Soul is not directed at children, and we do not knowingly collect
 any data from anyone, regardless of age, since no data is collected or
 transmitted in the first place.
 
 
-6. CHANGES TO THIS POLICY
+5. CHANGES TO THIS POLICY
 
 If this policy changes — for example, if a future feature introduces a new
 type of network connection — this page will be updated and the "Last
 updated" date at the top will change accordingly.
 
 
-7. CONTACT
+6. CONTACT
 
 Questions about this policy can be sent to: siliguystudio@gmail.com
