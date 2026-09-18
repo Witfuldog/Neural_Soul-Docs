@@ -26,6 +26,11 @@ use Discord guest mode)            each friend's character and
                                    its size, keyed by that
                                    friend's Discord user ID
 
+Your Discord Bot token (only if    Reconnects your own Bot      settings.local.json,
+you use the Bot connection and     without pasting it again     encrypted for your
+choose to remember it)                                          Windows account and
+                                                                never synchronized
+
 Log file written by the Unity      Troubleshooting              Player.log
 engine
 
@@ -69,9 +74,11 @@ Rooms            Other devices on your  Room discovery uses broadcasts on
 (LAN)            local network          your local network, and players
                                         connect to each other directly.
 
-Discord guest    The Discord desktop    See Section 3.
-mode             app on your own
-                 computer
+Discord guest    The Discord app on      See Section 3.
+mode             your own computer, or
+                 Discord's servers,
+                 depending on the
+                 connection method
 
 OBS output       Your own computer      A local page for OBS's browser
                  only (127.0.0.1)       source. It cannot be reached from
@@ -98,25 +105,40 @@ Unity, as described in Section 4.
 
 3. DISCORD GUEST MODE
 
-This optional feature lets a room host show friends from their current
-Discord voice call as characters. It only starts when the host clicks
-"Connect Discord" and approves Discord's authorization prompt.
+This optional feature lets a room host show friends from their Discord
+voice call as characters. Nothing happens until the host starts it. There
+are two connection methods, and your version of Neural Soul uses one of
+them.
 
-While connected, Neural Soul reads from the Discord desktop app on the
-host's own computer:
-  - which voice channel the host is currently in
-  - the user ID, display name and mute state of members of that channel
-  - when each member starts or stops speaking
-
-Neural Soul does not access voice audio or messages, and does not change
-your Discord settings or voice channel. The access token is kept in memory
-only and is discarded when you disconnect or quit.
+Either way, Neural Soul learns only who is in that voice channel, their
+display names, whether they are muted, and when each of them starts and
+stops transmitting voice. It never listens to, decodes, records or
+transcribes the call, and never reads your messages.
 
 Member names and speaking states are used only to show characters on the
 host's screen and in the host's OBS output. They are not saved, and they
-are not sent to us or to other players in the room. The only thing saved
-is the layout described in Section 1. Discord's authorization and the
-Discord app itself are governed by Discord's privacy policy.
+are not sent to us or to other players in the room. The only things saved
+are described in Section 1. Discord itself is governed by Discord's
+privacy policy.
+
+Connecting through the Discord app on your PC
+  The host clicks "Connect Discord" and approves Discord's authorization
+  prompt, and Neural Soul then reads the voice channel the host is in from
+  the Discord desktop app running on the same computer. The access token
+  is kept in memory only and is discarded when you disconnect or quit.
+  Neural Soul does not change your Discord settings or voice channel.
+
+Connecting through your own Discord Bot
+  The host creates their own Discord Bot, invites it to their server and
+  pastes its token into Neural Soul. A helper program on your computer
+  then signs in as your Bot and joins the voice channel you pick, so
+  everyone in the call can see that it is there. It joins muted and never
+  transmits. Voice packets from the call are end-to-end encrypted and
+  Neural Soul does not decrypt them; it only notices that packets are
+  arriving, which is how it knows who is currently transmitting. Your Bot
+  token is used only to sign that Bot in; it stays on your computer, is
+  never sent to us, and is only stored if you choose to remember it, as
+  described in Section 1.
 
 
 4. ENGINE DIAGNOSTICS (UNITY)
@@ -151,8 +173,11 @@ Deleting the folder listed in Section 1 permanently removes your settings,
 your custom characters and the Discord guest layout. Uninstalling through
 Steam does not remove this folder, so delete it yourself if you want
 everything gone. You can end Discord guest mode at any time with
-"Disconnect Discord", and revoke Neural Soul's access in Discord under
-User Settings > Authorized Apps.
+"Disconnect Discord". If you connected through the Discord app, you can
+also revoke Neural Soul's access in Discord under User Settings >
+Authorized Apps. If you connected through your own Bot, you can clear the
+remembered token in Neural Soul, remove the Bot from your server, or reset
+its token in the Discord Developer Portal.
 
 
 7. CHILDREN'S PRIVACY
