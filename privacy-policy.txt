@@ -1,6 +1,6 @@
 NEURAL SOUL — PRIVACY POLICY
 
-Last updated: 2026/09/23
+Last updated: 2026/09/24
 Applies to: Neural Soul (Steam, Windows)
 
 Neural Soul is built to run on your own machine. This page explains
@@ -25,6 +25,10 @@ Discord guest layout (only if you  Remembers where you placed   settings.json
 use Discord guest mode)            each friend's character and
                                    its size, keyed by that
                                    friend's Discord user ID
+
+A random room ID, made the first   Lets a room host's OBS       settings.json
+time you join a room (not your     sources recognise you when
+Steam ID)                          you rejoin
 
 Your Discord Bot token (after it   Reconnects your own Bot      settings.local.json,
 signs in, unless you untick        without pasting it again     encrypted for your
@@ -88,8 +92,10 @@ While you are in a room, only these are shared with the other players in
 that room: the name you use in the room, the room name, your character's
 images and files, your voice level (quiet / talking / loud — never audio),
 your expression and costume, which of the keys you bound to your character
-are pressed, your character's placement, and the room's Pack. Nothing is
-shared with anyone outside the room.
+are pressed, your character's placement, the room's Pack, and your random
+room ID, so the host's OBS sources recognise you when you rejoin (it is
+not your Steam ID and says nothing about who you are). Nothing is shared
+with anyone outside the room.
 
 If you use a third-party virtual LAN tool for rooms (such as Radmin VPN or
 Hamachi), its data handling is governed by that tool's own privacy policy.
