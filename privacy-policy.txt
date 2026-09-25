@@ -1,6 +1,6 @@
 NEURAL SOUL — PRIVACY POLICY
 
-Last updated: 2026/09/24
+Last updated: 2026/09/25
 Applies to: Neural Soul (Steam, Windows)
 
 Neural Soul is built to run on your own machine. This page explains
@@ -22,9 +22,12 @@ character positions and sizes)                                  settings.local.j
 Your stickers, avatars and Packs   Displays your characters     UserContent folder
 
 Discord guest layout (only if you  Remembers where you placed   settings.json
-use Discord guest mode)            each friend's character and
-                                   its size, keyed by that
-                                   friend's Discord user ID
+use Discord guest mode or show a   each guest's character and
+host's Discord guests)             its size, keyed by a code
+                                   made from their Discord user
+                                   ID, not the ID itself; the
+                                   host also keeps the random
+                                   secret used to make the codes
 
 A random room ID, made the first   Lets a room host's OBS       settings.json
 time you join a room (not your     sources recognise you when
@@ -94,8 +97,10 @@ images and files, your voice level (quiet / talking / loud — never audio),
 your expression and costume, which of the keys you bound to your character
 are pressed, your character's placement, the room's Pack, and your random
 room ID, so the host's OBS sources recognise you when you rejoin (it is
-not your Steam ID and says nothing about who you are). Nothing is shared
-with anyone outside the room.
+not your Steam ID and says nothing about who you are). If the host uses
+Discord guest mode, the room also receives each guest's display name,
+whether they are talking and the character the host gave them (see
+Section 3). Nothing is shared with anyone outside the room.
 
 If you use a third-party virtual LAN tool for rooms (such as Radmin VPN or
 Hamachi), its data handling is governed by that tool's own privacy policy.
@@ -117,11 +122,15 @@ names, whether they are muted, and when each of them starts and stops
 transmitting voice. It never listens to, decodes, records or transcribes
 the call, and never reads your messages.
 
-Member names and speaking states are used only to show characters on the
-host's screen and in the host's OBS output. They are not saved, and they
-are not sent to us or to other players in the room. The only things saved
-are described in Section 1. Discord itself is governed by Discord's
-privacy policy.
+Member names and speaking states are used only to show characters: on the
+host's screen and OBS output, and for the other players in the host's
+room, who receive each guest's display name, whether they are talking and
+the character the host gave them, and can choose to show that character
+on their own screen. Discord user IDs stay on the host's computer: the
+room gets only a code made from each ID with a secret kept on the host's
+computer. Names and speaking states are not saved and are never sent to
+us. The only things saved are described in Section 1. Discord itself is
+governed by Discord's privacy policy.
 
 How it connects: the host creates their own Discord Bot, invites it to
 their server and pastes its token into Neural Soul. A helper program on
